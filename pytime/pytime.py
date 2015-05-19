@@ -330,7 +330,7 @@ def independence(year=None):
 def hangul(year=None):
     """
     9, October
-    :param yare: int
+    :param year: int
     :return: Hangul Day
     """
     return datetime.date(int(year), 10, 9) if year else datetime.date(_year, 10, 9)
