@@ -2,12 +2,12 @@
 # encoding: utf-8
 
 """
-    pytime
+    pytimekr
     ~~~~~~~~~~~~~
 
-    A easy-use module to solve the datetime needs by string.
+    fork pytime for Korean.
 
-    :copyright: (c) 2015 by Sinux <nsinux@gmail.com>
+    :copyright: (c) 2015 by Parkayun <iamparkayun@gmail.com>
     :license: MIT, see LICENSE for more details.
 """
 
@@ -317,6 +317,14 @@ def thanks(year=None):
         current_day = 25 - weekday_seq
     return datetime.date(nov_first.year, 11, current_day)
 
+
+def independence(year=None):
+    """
+    15, August
+    :param year: int
+    :return: Korea's Independence Day
+    """
+    return datetime.date(int(year), 8, 15) if year else datetime.date(_year, 8, 15)
 
 if __name__ == '__main__':
     # _time_filter('2015-01-03')
