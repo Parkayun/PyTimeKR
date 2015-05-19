@@ -335,6 +335,15 @@ def hangul(year=None):
     """
     return datetime.date(int(year), 10, 9) if year else datetime.date(_year, 10, 9)
 
+
+def constitution(year=None):
+    """
+    17, July
+    :param year: int
+    :return: Korea's Constitution Day
+    """
+    return datetime.date(int(year), 7, 17) if year else datetime.date(_year, 7, 17)
+
 if __name__ == '__main__':
     # _time_filter('2015-01-03')
     # print(calendar.monthrange(2015, 10))
