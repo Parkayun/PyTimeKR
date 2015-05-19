@@ -326,6 +326,15 @@ def independence(year=None):
     """
     return datetime.date(int(year), 8, 15) if year else datetime.date(_year, 8, 15)
 
+
+def hangul(year=None):
+    """
+    9, October
+    :param yare: int
+    :return: Hangul Day
+    """
+    return datetime.date(int(year), 10, 9) if year else datetime.date(_year, 10, 9)
+
 if __name__ == '__main__':
     # _time_filter('2015-01-03')
     # print(calendar.monthrange(2015, 10))
