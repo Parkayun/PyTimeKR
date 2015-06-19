@@ -364,7 +364,7 @@ def chuseok(year=None):
     return LunarDate(year, 8, 15).toSolarDate() if year else LunarDate(_year, 8, 15).toSolarDate()
 
 
-def is_red_day(date)
+def is_red_day(date):
     weekday = date.isoweekday()
     if 6 <= weekday:
         return True
