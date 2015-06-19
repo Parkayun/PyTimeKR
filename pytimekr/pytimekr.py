@@ -13,6 +13,9 @@
 
 import datetime
 import calendar
+
+from lunardate import LunarDate
+
 from .filter import BaseParser, str_tuple
 from .exception import CanNotFormatError, UnexpectedTypeError
 
@@ -343,6 +346,28 @@ def constitution(year=None):
     :return: Korea's Constitution Day
     """
     return datetime.date(int(year), 7, 17) if year else datetime.date(_year, 7, 17)
+
+
+def lunar_newyear(year=None):
+    """
+    :parm year: int
+    :return: Lunar New Year Day
+    """
+    return LunarDate(year, 1, 1).toSolarDate() if year else LunarDate(_year, 1, 1).toSolarDate()
+
+
+def chuseok(year=None):
+    """
+    :parm year: int
+    :return: Korean Thanksgiving Day
+    """
+    return LunarDate(year, 8, 15).toSolarDate() if year else LunarDate(_year, 8, 15).toSolarDate()
+
+
+def is_red_day(date)
+    weekday = date.isoweekday()
+    if 6 <= weekday:
+        return True
 
 if __name__ == '__main__':
     # _time_filter('2015-01-03')
