@@ -327,7 +327,8 @@ def independence(year=None):
     :param year: int
     :return: Korea's Independence Day
     """
-    return datetime.date(int(year), 8, 15) if year else datetime.date(_year, 8, 15)
+    year = year if year else _year
+    return datetime.date(int(year), 8, 15)
 
 
 def hangul(year=None):
@@ -336,7 +337,8 @@ def hangul(year=None):
     :param year: int
     :return: Hangul Day
     """
-    return datetime.date(int(year), 10, 9) if year else datetime.date(_year, 10, 9)
+    year = year if year else _year
+    return datetime.date(int(year), 10, 9)
 
 
 def constitution(year=None):
@@ -345,7 +347,8 @@ def constitution(year=None):
     :param year: int
     :return: Korea's Constitution Day
     """
-    return datetime.date(int(year), 7, 17) if year else datetime.date(_year, 7, 17)
+    year = year if year else _year
+    return datetime.date(int(year), 7, 17)
 
 
 def lunar_newyear(year=None):
@@ -353,7 +356,8 @@ def lunar_newyear(year=None):
     :parm year: int
     :return: Lunar New Year Day
     """
-    return LunarDate(year, 1, 1).toSolarDate() if year else LunarDate(_year, 1, 1).toSolarDate()
+    year = year if year else _year
+    return LunarDate(year, 1, 1).toSolarDate()
 
 
 def chuseok(year=None):
@@ -361,7 +365,8 @@ def chuseok(year=None):
     :parm year: int
     :return: Korean Thanksgiving Day
     """
-    return LunarDate(year, 8, 15).toSolarDate() if year else LunarDate(_year, 8, 15).toSolarDate()
+    year = year if year else _year
+    return LunarDate(year, 8, 15).toSolarDate()
 
 
 def samiljeol(year=None):
