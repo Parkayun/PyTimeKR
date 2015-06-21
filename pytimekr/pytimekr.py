@@ -325,7 +325,7 @@ def independence(year=None):
     """
     15, August
     :param year: int
-    :return: Korea's Independence Day
+    :return: Independence Day of Korea
     """
     year = year if year else _year
     return datetime.date(int(year), 8, 15)
@@ -345,7 +345,7 @@ def constitution(year=None):
     """
     17, July
     :param year: int
-    :return: Korea's Constitution Day
+    :return: Constitution Day of Korea
     """
     year = year if year else _year
     return datetime.date(int(year), 7, 17)
@@ -363,7 +363,7 @@ def lunar_newyear(year=None):
 def chuseok(year=None):
     """
     :parm year: int
-    :return: Korean Thanksgiving Day
+    :return: Thanksgiving Day of Korea
     """
     year = year if year else _year
     return LunarDate(year, 8, 15).toSolarDate()
@@ -372,7 +372,7 @@ def chuseok(year=None):
 def samiljeol(year=None):
     """
     :parm year: int
-    :return: Korean Independence Movement Day
+    :return: Independence Movement Day of Korea
     """
     year = year if year else _year
     return datetime.date(int(year), 3, 1)
@@ -381,7 +381,7 @@ def samiljeol(year=None):
 def children(year=None):
     """
     :parm year: int
-    :return: Korean Children's Day
+    :return: Children's Day of Korea
     """
     year = year if year else _year
     return datetime.date(int(year), 5, 5)
@@ -399,7 +399,7 @@ def buddha(year=None):
 def memorial(year=None):
     """
     :parm year: int
-    :return: Korean Memorial Day
+    :return: Memorial Day of Korea
     """
     year = year if year else _year
     return datetime.date(int(year), 6, 6)
@@ -408,7 +408,7 @@ def memorial(year=None):
 def foundation(year=None):
     """
     :parm year: int
-    :return: Korean National Foundation Day
+    :return: National Foundation Day of Korea
     """
     year = year if year else _year
     return datetime.date(int(year), 10, 3)
