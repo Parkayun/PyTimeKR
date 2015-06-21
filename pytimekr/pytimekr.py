@@ -391,6 +391,24 @@ def buddha(year=None):
     return LunarDate(year, 4, 8).toSolarDate()
 
 
+def memorial(year=None):
+    """
+    :parm year: int
+    :return: Korean Memorial Day
+    """
+    year = year if year else _year
+    return datetime.date(int(year), 6, 6)
+
+
+def foundation(year=None):
+    """
+    :parm year: int
+    :return: Korean National Foundation Day
+    """
+    year = year if year else _year
+    return datetime.date(int(year), 10, 3)
+
+
 def red_days(date):
     if date == chuseok(date.year) or date == lunar_newyear(date.year):
         delta = datetime.timedelta(days=1)
@@ -400,7 +418,11 @@ def red_days(date):
 def holidays(year=None):
     year = year if year else _year
     holidays = red_days(lunar_newyear(year)) + red_days(chuseok(year))
-    holidays += [newyear(year), samiljeol(year), children(year)] 
+    holidays += [
+        newyear(year), samiljeol(year), children(year), buddha(year), 
+        memorial(year), independence(year), hangul(year), foundation(year),
+        christmas(year)
+    ] 
     return holidays
 
 
