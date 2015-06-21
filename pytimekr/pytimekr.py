@@ -373,6 +373,15 @@ def samiljeol(year=None):
     return datetime.date(int(year), 3, 1)
 
 
+def children(year=None):
+    """
+    :parm year: int
+    :return: Korean Children's Day
+    """
+    year = year if year else _year
+    return datetime.date(int(year), 5, 5)
+
+
 def red_days(date):
     if date == chuseok(date.year) or date == lunar_newyear(date.year):
         delta = datetime.timedelta(days=1)
@@ -382,7 +391,7 @@ def red_days(date):
 def holidays(year=None):
     year = year if year else _year
     holidays = red_days(lunar_newyear(year)) + red_days(chuseok(year))
-    holidays += [newyear(year), samiljeol(year)] 
+    holidays += [newyear(year), samiljeol(year), children(year)] 
     return holidays
 
 
