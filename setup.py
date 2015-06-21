@@ -11,28 +11,29 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 
-import pytime
+import pytimekr
 setup(
-    name='pytime',
-    version=pytime.__version__,
-    description='A easy-use module to operate datetime by string',
+    name='pytimekr',
+    version=pytimekr.__version__,
+    description='PyTime fork for Korean',
     long_description=long_description,
-    url='https://github.com/shnode/PyTime',
-    author='Sinux',
-    author_email='nsinux@gmail.com',
+    url='https://github.com/Parkayun/PyTimeKR',
+    author='Parkayun',
+    author_email='iamparkayun@gmail.com',
     license='MIT',
-    keywords='datetime time datetime timeparser',
+    keywords='datetime time datetime timeparser korea holiday',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     package_data={'': ['README.md']},
-    tests_require=['coverage'],
-    extras_require={
-        'coveralls': ['coveralls']
-    },
+    # tests_require=['coverage'],
+    # extras_require={
+    #     'coveralls': ['coveralls']
+    # },
+    install_requires=[
+        'lunardate>=0.1.5',
+    ],
     include_package_data=True,
     classifiers=[
-        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
-        'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
