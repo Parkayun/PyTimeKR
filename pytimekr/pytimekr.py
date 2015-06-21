@@ -364,18 +364,33 @@ def chuseok(year=None):
     return LunarDate(year, 8, 15).toSolarDate() if year else LunarDate(_year, 8, 15).toSolarDate()
 
 
+def samiljeol(year=None):
+    """
+    :parm year: int
+    :return: Korean Independence Movement Day
+    """
+    year = year if year else _year
+    return datetime.date(int(year), 3, 1)
+
+
 def red_days(date):
     if date == chuseok(date.year) or date == lunar_newyear(date.year):
         delta = datetime.timedelta(days=1)
         return [date-delta, date, date+delta]
 
 
+def holidays(year=None):
+    year = year if year else _year
+    holidays = red_days(lunar_newyear(year)) + red_days(chuseok(year))
+    holidays += [newyear(year), samiljeol(year)] 
+    return holidays
+
+
 def is_red_day(date):
     weekday = date.isoweekday()
     if 6 <= weekday:
         return True
-    holidays = red_days(lunar_newyear(date.year)) + red_days(chuseok(date.year))
-    for holiday in holidays:
+    for holiday in holidays():
         if date == holiday:
             return True
     return False
