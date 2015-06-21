@@ -382,6 +382,15 @@ def children(year=None):
     return datetime.date(int(year), 5, 5)
 
 
+def buddha(year=None):
+    """
+    :parm year: int
+    :return: Buddha's Birthday Day
+    """
+    year = year if year else _year
+    return LunarDate(year, 4, 8).toSolarDate()
+
+
 def red_days(date):
     if date == chuseok(date.year) or date == lunar_newyear(date.year):
         delta = datetime.timedelta(days=1)
