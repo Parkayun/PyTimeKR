@@ -435,7 +435,7 @@ def is_red_day(date):
     weekday = date.isoweekday()
     if 6 <= weekday:
         return True
-    for holiday in holidays():
+    for holiday in holidays(date.year):
         if date == holiday:
             return True
     return False
